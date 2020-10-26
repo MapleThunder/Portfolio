@@ -19,7 +19,7 @@ const LayoutWrapper = styled.div`
   transition: color 0.2s ease-out, background 0.2s ease-out;
 `;
 const MainLayout = styled.main`
-  max-width: 90%;
+  max-width: 1200px;
   margin: 1rem auto;
   display: grid;
   grid-template-columns: 1fr;
