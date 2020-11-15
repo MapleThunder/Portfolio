@@ -8,14 +8,7 @@ export const ThemeToggle = () => {
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
         <div class="toggleWrapper">
-          <input
-            type="checkbox"
-            class="dn"
-            id="dn"
-            onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
-            checked={theme === "dark"}
-          />
-          <label for="dn" class="toggle">
+          <label htmlFor="dn" class="toggle">
             <span class="toggle__handler">
               <span class="crater crater--1"></span>
               <span class="crater crater--2"></span>
@@ -28,6 +21,13 @@ export const ThemeToggle = () => {
             <span class="star star--5"></span>
             <span class="star star--6"></span>
           </label>
+          <input
+            type="checkbox"
+            class="dn"
+            id="dn"
+            onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
+            checked={theme === "dark"}
+          />
         </div>
       )}
     </ThemeToggler>

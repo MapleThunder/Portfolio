@@ -12,10 +12,11 @@ import styled from "styled-components";
 
 import Header from "./header";
 import "./styles/layout.css";
+import { COLOURS } from "./styles";
 
 const LayoutWrapper = styled.div`
-  background-color: var(--bg);
-  color: var(--textNormal);
+  background-color: ${COLOURS.background};
+  color: ${COLOURS.fontColour};
   transition: color 0.2s ease-out, background 0.2s ease-out;
 `;
 const MainLayout = styled.main`

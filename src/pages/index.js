@@ -8,13 +8,14 @@ import { COLOURS } from "../components/styles";
 const HeroContainer = styled.div`
   height: 500px;
   width: 100%;
-  background-color: ${COLOURS.dark.elevation4};
+  background-color: ${COLOURS.elevation4};
   display: flex;
   justify-content: center;
 
   .hero-content {
     max-width: 1200px;
-    padding: 25px 0;
+    width: 80%;
+    padding: 75px 0;
   }
 `;
 

@@ -4,7 +4,6 @@ import React from "react";
 import styled from "styled-components";
 
 import { COLOURS } from "./styles";
-import { ThemeToggle } from "./themeToggle";
 
 const HeaderWrapper = styled.header`
   background: ${COLOURS.main};
@@ -34,7 +33,6 @@ const Header = ({ siteTitle }) => (
       <h1>
         <Link to="/">{siteTitle}</Link>
       </h1>
-      <ThemeToggle />
     </HeaderContainer>
   </HeaderWrapper>
 );
