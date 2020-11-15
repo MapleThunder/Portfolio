@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A site to act as an online resume and portfolio.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Niko Bentley <niko@maplestorm.ca>",
   "dependencies": {
     "@iconify/icons-feather": "^1.0.9",
     "@iconify/react": "^1.1.3",
