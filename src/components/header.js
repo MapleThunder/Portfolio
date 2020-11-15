@@ -8,7 +8,6 @@ import { ThemeToggle } from "./themeToggle";
 
 const HeaderWrapper = styled.header`
   background: ${COLOURS.main};
-  margin-bottom: 1.45rem;
 `;
 
 const HeaderContainer = styled.div`

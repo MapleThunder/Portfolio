@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 
 import Header from "./header";
-import "./layout.css";
+import "./styles/layout.css";
 
 const LayoutWrapper = styled.div`
   background-color: var(--bg);
@@ -19,8 +19,7 @@ const LayoutWrapper = styled.div`
   transition: color 0.2s ease-out, background 0.2s ease-out;
 `;
 const MainLayout = styled.main`
-  max-width: 1200px;
-  margin: 1rem auto;
+  /* margin: 1rem auto; */
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 40px;
