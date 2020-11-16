@@ -24,7 +24,11 @@ const IndexPage = () => (
     <SEO title="Home" />
     <HeroContainer>
       <div className="hero-content">
-        <h1>Hi, Niko here</h1>
+        <h1>
+          Hi, Niko here. <br />
+          Full-Stack Web Developer with a passion for learning <br />
+          based in Nova Scotia, Canada.
+        </h1>
       </div>
     </HeroContainer>
   </Layout>

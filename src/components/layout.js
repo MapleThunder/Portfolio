@@ -7,7 +7,6 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 
 import Header from "./header";
@@ -18,6 +17,7 @@ const LayoutWrapper = styled.div`
   background-color: ${COLOURS.background};
   color: ${COLOURS.fontColour};
   transition: color 0.2s ease-out, background 0.2s ease-out;
+  height: 100%;
 `;
 const MainLayout = styled.main`
   /* margin: 1rem auto; */
@@ -27,19 +27,9 @@ const MainLayout = styled.main`
 `;
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <LayoutWrapper>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header siteTitle="Niko Bentley" />
       <MainLayout>{children}</MainLayout>
     </LayoutWrapper>
   );
