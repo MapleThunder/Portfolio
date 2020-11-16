@@ -27,7 +27,11 @@ const IndexPage = () => (
         <h1>
           Hi, Niko here. <br />
           Full-Stack Web Developer with a passion for learning <br />
-          based in Nova Scotia, Canada.
+          based in Nova Scotia,&nbsp;
+          <span style={{ color: COLOURS.redSalsa, fontSize: "2rem" }}>
+            Canada
+          </span>
+          .
         </h1>
       </div>
     </HeroContainer>
