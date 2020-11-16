@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { COLOURS } from "./styles";
 
 const HeaderWrapper = styled.header`
-  background: ${COLOURS.main};
+  background: ${COLOURS.bdazzledBlue};
 `;
 
 const HeaderContainer = styled.div`
@@ -19,21 +19,23 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  h1 {
+  .home-link {
     margin: 0;
-  }
-  a {
-    color: white;
-    text-decoration: none;
+
+    a {
+      font-size: 1.25rem;
+      color: white;
+      text-decoration: none;
+    }
   }
 `;
 
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
     <HeaderContainer>
-      <h1>
+      <div className="home-link">
         <Link to="/">{siteTitle}</Link>
-      </h1>
+      </div>
     </HeaderContainer>
   </HeaderWrapper>
 );
