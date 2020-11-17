@@ -8,7 +8,6 @@ import SEO from "../components/seo";
 import { COLOURS } from "../components/styles";
 
 const HeroContainer = styled.div`
-  height: 500px;
   width: 100%;
   background-color: ${COLOURS.elevation4};
   display: flex;
@@ -17,15 +16,25 @@ const HeroContainer = styled.div`
   .hero {
     max-width: 1200px;
     width: 80%;
-    padding: 75px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0;
 
     & > div {
-      max-width: 45%;
+      width: 48%;
+    }
+
+    &-text {
+      .first-line {
+        font-size: 2rem;
+        padding-bottom: 25px;
+      }
     }
 
     &-image {
       .me {
-        border-radius: 250px;
+        border-radius: 50%;
       }
     }
   }
@@ -35,7 +44,7 @@ export const pageQuery = graphql`
   query {
     file(relativePath: { eq: "me.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 500) {
+        fluid(maxWidth: 2100) {
           base64
           tracedSVG
           aspectRatio
@@ -54,16 +63,19 @@ export const pageQuery = graphql`
 
 const IndexPage = ({ data }) => (
   <Layout>
-    {console.log(data)}
     <SEO title="Home" />
     <HeroContainer>
       <div className="hero">
         <div className="hero-text">
           <h1>
             Hi, Niko here. <br />
-            Full-Stack Web Developer with a passion for learning <br />
-            based in Nova Scotia,&nbsp;
-            <span style={{ color: COLOURS.redSalsa, fontSize: "2rem" }}>
+            <br />
+            Full-Stack Web Developer with a passion for learning based in&nbsp;
+            <span style={{ color: COLOURS.aero, fontSize: "inherit" }}>
+              Nova Scotia
+            </span>
+            ,&nbsp;
+            <span style={{ color: COLOURS.redSalsa, fontSize: "inherit" }}>
               Canada
             </span>
             .
