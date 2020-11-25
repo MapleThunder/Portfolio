@@ -6,7 +6,7 @@ const StyledSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 25px 0;
+  padding: 0;
 
   & > div {
     width: 48%;
@@ -39,7 +39,7 @@ const StyledSection = styled.section`
 `;
 
 const Hero = ({ content, image }) => {
-  const { frontmatter, rawMarkdownBody } = content;
+  const { frontmatter, html } = content;
 
   return (
     <StyledSection id="hero">
@@ -56,7 +56,10 @@ const Hero = ({ content, image }) => {
           {frontmatter.subtitlePrefix}{" "}
           <span className="highlighted">{frontmatter.subtitleHighlight}</span>.
         </h2>
-        <div className="description">{rawMarkdownBody}</div>
+        <div
+          className="description"
+          dangerouslySetInnerHTML={{ __html: html }}
+        ></div>
       </div>
       <div className="hero-image">
         <Img

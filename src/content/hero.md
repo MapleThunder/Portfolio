@@ -6,4 +6,5 @@ subtitlePrefix: "I build and design "
 subtitleHighlight: "things for the web"
 ---
 
-Web Developer with a passion for learning. Based in Halifax.
+Web Developer with a passion for learning.  
+Based in Halifax, Nova Scotia.
