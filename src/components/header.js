@@ -22,7 +22,12 @@ const NavLinks = styled.nav`
 
   a {
     font-size: var(--h4);
+    border: solid 2px transparent;
 
+    &:hover,
+    &:focus {
+      border: solid 2px var(--accent);
+    }
     &.icon {
       font-size: var(--h3);
       border: none;

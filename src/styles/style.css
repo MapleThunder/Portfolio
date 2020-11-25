@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400|Space+Mono:400|Dosis:400|Open+Sans:400');
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:400|Space+Mono:400|Dosis:400|Open+Sans:400");
 
 :root {
   /* Define colours as colours */
@@ -25,14 +25,14 @@
   --footerBackground: var(--primary);
   --cardBg: var(--white);
   --buttonTextColour: var(--black);
-  
+
   /* Styles */
   --debugBorder: dashed 2px red;
   --line: solid 1px var(--lineColour);
 
   /* Type */
-  --headingFont: 'Dosis', monospace;
-  --bodyFont: 'Open Sans', sans-serif;
+  --headingFont: "Dosis", monospace;
+  --bodyFont: "Open Sans", sans-serif;
   --baseFontSize: 100%;
   --h1: 3.052rem;
   --h2: 2.441rem;
@@ -44,16 +44,13 @@
   /* Elevation */
   --level-inset: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   --level-0: none;
-  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 
-    0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-  
 
   /* Positioning */
   --containerPadding: 5%;
@@ -65,9 +62,11 @@
 html {
   font-size: var(--baseFontSize); /*18px*/
   box-sizing: border-box;
-} 
+}
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -150,12 +149,18 @@ blockquote a {
   border-bottom: solid 2px var(--primary);
 }
 
-p a:hover, p a:focus,
-blockquote a:hover, blockquote a:focus {
+p a:hover,
+p a:focus,
+blockquote a:hover,
+blockquote a:focus {
   background-color: var(--primary);
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 3rem 0 1.38rem;
   font-family: var(--headingFont);
   font-weight: 400;
@@ -167,15 +172,26 @@ h1 {
   font-size: var(--h1);
 }
 
-h2 {font-size: var(--h2);}
+h2 {
+  font-size: var(--h2);
+}
 
-h3 {font-size: var(--h3);}
+h3 {
+  font-size: var(--h3);
+}
 
-h4 {font-size: var(--h4);}
+h4 {
+  font-size: var(--h4);
+}
 
-h5 {font-size: var(--h5);}
+h5 {
+  font-size: var(--h5);
+}
 
-small, .text_small {font-size: var(--smallText);}
+small,
+.text_small {
+  font-size: var(--smallText);
+}
 /* END Type Scale */
 
 blockquote {
@@ -190,12 +206,13 @@ label {
   font-size: var(--smallText);
 }
 
-label + input[type="checkbox"], 
+label + input[type="checkbox"],
 label + input[type="radio"] {
   display: inline-flex;
 }
 
-input, textarea {
+input,
+textarea {
   border: var(--line);
   border-radius: 4px;
   padding: 4px 5px;
@@ -296,11 +313,11 @@ button:hover {
   border-radius: var(--borderRadius);
   /* border: var(--debugBorder); */
 }
- /* First item will never have margin top */
+/* First item will never have margin top */
 .card > *:first-child {
   margin-top: 0;
 }
-  
+
 /* Last item will never have margin bottom */
 .card > *:last-child {
   margin-bottom: 0;
