@@ -1,31 +1,28 @@
 import React from "react";
-import styled from "styled-components";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { COLOURS } from "../styles";
 import Hero from "../components/hero";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import Section from "../components/section";
 
-const IndexPage = ({ data }) => (
-  <>
-    <Header siteTitle="NB" />
-    <Layout>
-      <SEO title="Home" />
-      <Hero
-        content={data.hero.edges[0].node}
-        image={data.file.childImageSharp}
-      />
-      <section>
-        <h2>About Me</h2>
-        <p></p>
-      </section>
-    </Layout>
-    <Footer />
-  </>
-);
+const IndexPage = ({ data }) => {
+  const { hero, file, about } = data;
+
+  return (
+    <>
+      <Header siteTitle="NB" />
+      <Layout>
+        <SEO title="Home" />
+        <Hero content={hero.edges[0].node} image={file.childImageSharp} />
+        <Section content={about.edges[0].node} />
+      </Layout>
+      <Footer />
+    </>
+  );
+};
 
 export default IndexPage;
 
@@ -47,7 +44,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    hero: allMarkdownRemark {
+    hero: allMarkdownRemark(
+      filter: { frontmatter: { type_id: { eq: "hero-front" } } }
+    ) {
       edges {
         node {
           frontmatter {
@@ -57,7 +56,18 @@ export const pageQuery = graphql`
             subtitlePrefix
             title
           }
-          rawMarkdownBody
+          html
+        }
+      }
+    }
+    about: allMarkdownRemark(
+      filter: { frontmatter: { type_id: { eq: "about" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+          }
           html
         }
       }
