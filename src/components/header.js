@@ -4,45 +4,33 @@ import React from "react";
 import styled from "styled-components";
 import { AiFillTwitterCircle, AiFillGithub } from "react-icons/ai";
 
-import { COLOURS } from "./styles";
-
 const HeaderWrapper = styled.header`
-  background: ${COLOURS.bdazzledBlue};
-`;
+  --headerHeight: 4rem;
 
-const HeaderContainer = styled.div`
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 80%;
-  padding: 1rem;
-  padding-left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .home-link {
-    margin: 0;
-
-    a {
-      font-size: 1.25rem;
-      color: white;
-      text-decoration: none;
-    }
+  .home {
+    font-size: var(--h2);
+    font-family: var(--headingFont);
+    color: white;
+    text-decoration: none;
   }
 `;
 
-const SocialLinks = styled.div`
-  display: inline-grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+const NavLinks = styled.nav`
+  a + a {
+    margin-left: 20px;
+  }
 
   a {
-    color: ${COLOURS.fontColour};
-    font-size: 2rem;
+    font-size: var(--h4);
 
-    &:hover,
-    &:focus {
-      color: ${COLOURS.redSalsa};
+    &.icon {
+      font-size: var(--h3);
+      border: none;
+
+      &:hover,
+      &:focus {
+        background-color: var(--primary);
+      }
     }
   }
 `;
@@ -53,19 +41,21 @@ const Header = ({ siteTitle }) => {
 
   return (
     <HeaderWrapper>
-      <HeaderContainer>
-        <div className="home-link">
-          <Link to="/">{siteTitle}</Link>
-        </div>
-        <SocialLinks>
-          <Link to={twitterLink}>
-            <AiFillTwitterCircle />
-          </Link>
-          <Link to={githubLink}>
-            <AiFillGithub />
-          </Link>
-        </SocialLinks>
-      </HeaderContainer>
+      <Link to="/" className="home">
+        {siteTitle}
+      </Link>
+
+      <NavLinks>
+        <Link to="#about">About</Link>
+        <Link to="#skills">Skills</Link>
+        <Link to="#contact">Contact</Link>
+        <Link to={twitterLink} className="icon">
+          <AiFillTwitterCircle />
+        </Link>
+        <Link to={githubLink} className="icon">
+          <AiFillGithub />
+        </Link>
+      </NavLinks>
     </HeaderWrapper>
   );
 };

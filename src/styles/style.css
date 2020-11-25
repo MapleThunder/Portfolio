@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400|Space+Mono:400|Dosis:400|Open+Sans:400');
+
+:root {
+  /* Define colours as colours */
+  --blanchedAlmond: #fcecc9;
+  --honeyYellow: #f2ad18;
+  --lightPink: #fcb0b3;
+  --redSalsa: #f93943;
+  --aero: #7eb2dd;
+  --bdazzledBlue: #445e93;
+  --black: #222;
+  --grey: #bfbfbf;
+  /* --lightGrey: #f2f4f6; */
+  --lightGrey: #eee;
+  --white: #fff;
+
+  /* Define the colour's intentions */
+  --background: var(--lightGrey);
+  --textColour: var(--black);
+  --primary: var(--aero);
+  --accent: var(--blanchedAlmond);
+  --danger: var(--redSalsa);
+  --lineColour: var(--textColour);
+  --headerBackground: var(--primary);
+  --footerBackground: var(--primary);
+  --cardBg: var(--white);
+  --buttonTextColour: var(--black);
+  
+  /* Styles */
+  --debugBorder: dashed 2px red;
+  --line: solid 1px var(--lineColour);
+
+  /* Type */
+  --headingFont: 'Dosis', monospace;
+  --bodyFont: 'Open Sans', sans-serif;
+  --baseFontSize: 100%;
+  --h1: 3.052rem;
+  --h2: 2.441rem;
+  --h3: 1.953rem;
+  --h4: 1.563rem;
+  --h5: 1.25rem;
+  --smallText: 0.8rem;
+
+  /* Elevation */
+  --level-inset: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --level-0: none;
+  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  
+
+  /* Positioning */
+  --containerPadding: 5%;
+  --headerHeight: 3rem;
+  --borderRadius: 10px;
+}
+
+/* FROM Type Scale */
+html {
+  font-size: var(--baseFontSize); /*18px*/
+  box-sizing: border-box;
+} 
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--bodyFont);
+  font-weight: 400;
+  line-height: 1.75;
+  background: var(--background);
+  color: var(--textColour);
+}
+
+header {
+  color: white;
+  height: var(--headerHeight);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: var(--headerBackground);
+  box-shadow: var(--level-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--containerPadding);
+  z-index: 100;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  border-bottom: solid 2px white;
+}
+
+header nav a + a {
+  margin-left: 10px;
+}
+
+header nav a:hover,
+header nav a:focus {
+  background-color: var(--accent);
+  border-bottom: solid 2px var(--accent);
+  color: var(--black);
+}
+
+footer {
+  --footerTextColour: var(--lightGrey);
+  background-color: var(--footerBackground);
+  color: var(--footerTextColour);
+  width: 100%;
+  padding: 2rem var(--containerPadding);
+  text-align: center;
+}
+
+footer a {
+  color: var(--footerTextColour);
+  text-decoration: none;
+  border-bottom: solid 2px var(--footerTextColour);
+}
+
+footer a:hover,
+footer a:focus {
+  background-color: var(--lightPink);
+}
+
+footer p {
+  margin-bottom: 0;
+  max-width: none;
+  font-size: var(--smallText);
+}
+
+p {
+  margin-bottom: 1rem;
+  max-width: 40em;
+}
+
+p a,
+blockquote a {
+  color: var(--textColour);
+  text-decoration: none;
+  border-bottom: solid 2px var(--primary);
+}
+
+p a:hover, p a:focus,
+blockquote a:hover, blockquote a:focus {
+  background-color: var(--primary);
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: var(--headingFont);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: var(--h1);
+}
+
+h2 {font-size: var(--h2);}
+
+h3 {font-size: var(--h3);}
+
+h4 {font-size: var(--h4);}
+
+h5 {font-size: var(--h5);}
+
+small, .text_small {font-size: var(--smallText);}
+/* END Type Scale */
+
+blockquote {
+  margin: 10px;
+  padding: 20px;
+  background: var(--cardBg);
+  box-shadow: var(--level-2);
+}
+
+label {
+  display: block;
+  font-size: var(--smallText);
+}
+
+label + input[type="checkbox"], 
+label + input[type="radio"] {
+  display: inline-flex;
+}
+
+input, textarea {
+  border: var(--line);
+  border-radius: 4px;
+  padding: 4px 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 5rem;
+}
+
+::placeholder {
+  color: var(--grey);
+}
+
+select {
+  border: var(--line);
+}
+
+hr {
+  border-top: var(--line);
+}
+
+button {
+  --buttonColour: var(--primary);
+  --buttonPadding: 8px 15px;
+  --buttonBorderRadius: 10px;
+  --fontSize: inherit;
+
+  appearance: none;
+  color: var(--buttonTextColour);
+  background-color: var(--buttonColour);
+  font-size: var(--fontSize);
+  border: none;
+  border-radius: var(--buttonBorderRadius);
+  padding: var(--buttonPadding);
+  box-shadow: var(--level-1);
+  transition: 0.3s ease-in-out box-shadow;
+}
+
+button[disabled] {
+  opacity: 0.5;
+}
+
+button.cancel {
+  --buttonColour: var(--danger);
+  --textColour: white;
+}
+
+button.small {
+  --fontSize: var(--smallText);
+  --buttonPadding: 4px 8px;
+  --buttonBorderRadius: 6px;
+}
+
+button:hover {
+  --buttonColour: var(--accent);
+  box-shadow: var(--level-2);
+}
+
+.layout {
+  padding: calc(3rem + var(--headerHeight)) var(--containerPadding);
+}
+
+.grid {
+  --gridCols: 2;
+  display: block;
+  grid-template-columns: repeat(var(--gridCols), 1fr);
+}
+
+.flex {
+  --justifyContent: space-between;
+
+  display: block;
+  justify-content: var(--justifyContent);
+}
+
+@media only screen and (min-width: 500px) {
+  :root {
+    --baseFontSize: 112.5%;
+  }
+  .grid {
+    display: grid;
+  }
+  .flex {
+    display: flex;
+  }
+}
+
+.fake-logo {
+  font-size: var(--baseFontSize);
+  margin: 0;
+}
+
+.card {
+  padding: 2em;
+  background-color: var(--cardBg);
+  box-shadow: var(--level-3);
+  border-radius: var(--borderRadius);
+  /* border: var(--debugBorder); */
+}
+ /* First item will never have margin top */
+.card > *:first-child {
+  margin-top: 0;
+}
+  
+/* Last item will never have margin bottom */
+.card > *:last-child {
+  margin-bottom: 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 33% 67%;
+  gap: 20px;
+}
+
+/* Themes */
+
+.dark {
+  --background: var(--black);
+  --textColour: var(--lightGrey);
+  --cardBg: #444;
+  --headerBackground: var(--bdazzledBlue);
+  --footerBackground: var(--bdazzledBlue);
+  --primary: var(--bdazzledBlue);
+  --accent: var(--honeyYellow);
+}
