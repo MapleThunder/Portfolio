@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { COLOURS } from "../components/styles";
+import { COLOURS } from "../styles";
 import Hero from "../components/hero";
 
 const HeroContainer = styled.div`

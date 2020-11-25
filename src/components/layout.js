@@ -14,7 +14,7 @@ import Footer from "./footer";
 import "../styles/normalize.css";
 import "../styles/main.css";
 import "../styles/style.css";
-import { COLOURS } from "./styles";
+import { COLOURS } from "../styles";
 
 const StyledLayout = styled.div`
   width: 100%;

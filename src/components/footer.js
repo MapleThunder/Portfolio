@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
-import { COLOURS } from "./styles";
+import { COLOURS } from "../styles";
 
 const FooterWrapper = styled.footer`
   background: ${COLOURS.bdazzledBlue};
