@@ -7,11 +7,20 @@ import { AiFillTwitterCircle, AiFillGithub } from "react-icons/ai";
 const HeaderWrapper = styled.header`
   --headerHeight: 4rem;
 
-  .home {
+  a.home {
     font-size: var(--h2);
     font-family: var(--headingFont);
     color: white;
     text-decoration: none;
+    line-height: 2.5rem;
+    border: solid 2px transparent;
+
+    &:hover,
+    &:focus {
+      background-color: var(--accent);
+      border: solid 2px var(--accent);
+      color: var(--textColour);
+    }
   }
 `;
 
