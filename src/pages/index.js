@@ -67,6 +67,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
+            type_id
           }
           html
         }

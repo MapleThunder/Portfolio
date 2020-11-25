@@ -23,7 +23,9 @@ const StyledSection = styled.section`
     width: 40%;
     justify-self: end;
     .me {
+      border: solid 1px var(--grey);
       border-radius: 50%;
+      box-shadow: var(--level-2);
     }
   }
   .title {
@@ -33,7 +35,8 @@ const StyledSection = styled.section`
     margin-top: 0;
   }
   .highlighted {
-    box-shadow: inset 0 -2.5rem 0 #f30000;
+    box-shadow: inset 0 -2.5rem 0 var(--accent);
+
     font-size: inherit;
   }
 `;

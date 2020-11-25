@@ -9,7 +9,7 @@ const Section = ({ content }) => {
   const { frontmatter, html } = content;
 
   return (
-    <StyledSection>
+    <StyledSection tabIndex="0" id={frontmatter.type_id}>
       <h2>{frontmatter.title}</h2>
       <p dangerouslySetInnerHTML={{ __html: html }}></p>
     </StyledSection>
