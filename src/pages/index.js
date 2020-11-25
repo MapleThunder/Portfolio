@@ -6,63 +6,25 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { COLOURS } from "../styles";
 import Hero from "../components/hero";
-
-const HeroContainer = styled.div`
-  width: 100%;
-  background-color: ${COLOURS.elevation4};
-  display: flex;
-  justify-content: center;
-
-  .hero {
-    max-width: 1200px;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px 0;
-
-    & > div {
-      width: 48%;
-    }
-
-    &-text {
-      .first-line {
-        font-size: 2rem;
-        padding-bottom: 25px;
-      }
-    }
-
-    &-image {
-      .me {
-        border-radius: 50%;
-      }
-    }
-  }
-`;
-
-const ContentSection = styled.section`
-  background-color: ${COLOURS.aero};
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-
-  .section-content {
-    max-width: 1200px;
-    width: 80%;
-  }
-`;
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    <Hero content={data.hero.edges[0].node} image={data.file.childImageSharp} />
-    <ContentSection>
-      <div className="section-content">
+  <>
+    <Header siteTitle="NB" />
+    <Layout>
+      <SEO title="Home" />
+      <Hero
+        content={data.hero.edges[0].node}
+        image={data.file.childImageSharp}
+      />
+      <section>
         <h2>About Me</h2>
         <p></p>
-      </div>
-    </ContentSection>
-  </Layout>
+      </section>
+    </Layout>
+    <Footer />
+  </>
 );
 
 export default IndexPage;
@@ -96,6 +58,7 @@ export const pageQuery = graphql`
             title
           }
           rawMarkdownBody
+          html
         }
       }
     }

@@ -9,8 +9,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import Header from "./header";
-import Footer from "./footer";
 import "../styles/normalize.css";
 import "../styles/main.css";
 import "../styles/style.css";
@@ -36,13 +34,9 @@ const StyledLayout = styled.div`
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <Header siteTitle="Niko Bentley" />
-      <main id="main-content" className="layout">
-        {children}
-      </main>
-      <Footer />
-    </div>
+    <main id="main-content" className="layout">
+      {children}
+    </main>
   );
 };
 
