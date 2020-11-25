@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Img from "gatsby-image";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { COLOURS } from "../components/styles";
+import Hero from "../components/hero";
 
 const HeroContainer = styled.div`
   width: 100%;
@@ -40,6 +40,33 @@ const HeroContainer = styled.div`
   }
 `;
 
+const ContentSection = styled.section`
+  background-color: ${COLOURS.aero};
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  .section-content {
+    max-width: 1200px;
+    width: 80%;
+  }
+`;
+
+const IndexPage = ({ data }) => (
+  <Layout>
+    <SEO title="Home" />
+    <Hero content={data.hero.edges[0].node} image={data.file.childImageSharp} />
+    <ContentSection>
+      <div className="section-content">
+        <h2>About Me</h2>
+        <p></p>
+      </div>
+    </ContentSection>
+  </Layout>
+);
+
+export default IndexPage;
+
 export const pageQuery = graphql`
   query {
     file(relativePath: { eq: "me.jpg" }) {
@@ -58,39 +85,19 @@ export const pageQuery = graphql`
         }
       }
     }
+    hero: allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            emoji
+            greetings
+            subtitleHighlight
+            subtitlePrefix
+            title
+          }
+          rawMarkdownBody
+        }
+      }
+    }
   }
 `;
-
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    <HeroContainer>
-      <div className="hero">
-        <div className="hero-text">
-          <h1>
-            Hi, Niko here. <br />
-            <br />
-            Full-Stack Web Developer with a passion for learning based in&nbsp;
-            <span style={{ color: COLOURS.aero, fontSize: "inherit" }}>
-              Nova Scotia
-            </span>
-            ,&nbsp;
-            <span style={{ color: COLOURS.redSalsa, fontSize: "inherit" }}>
-              Canada
-            </span>
-            .
-          </h1>
-        </div>
-        <div className="hero-image">
-          <Img
-            className="me"
-            fluid={data.file.childImageSharp.fluid}
-            alt="A picture of me at the beach in São Jacinto, Portugal."
-          />
-        </div>
-      </div>
-    </HeroContainer>
-  </Layout>
-);
-
-export default IndexPage;
