@@ -73,7 +73,7 @@ export const pageQuery = graphql`
             title
             type_id
           }
-          html
+          rawMarkdownBody
         }
       }
     }

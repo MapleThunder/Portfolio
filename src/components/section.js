@@ -6,12 +6,12 @@ const StyledSection = styled.section`
 `;
 
 const Section = ({ content }) => {
-  const { frontmatter, html } = content;
+  const { frontmatter, rawMarkdownBody } = content;
 
   return (
     <StyledSection tabIndex="0" id={frontmatter.type_id}>
       <h2>{frontmatter.title}</h2>
-      <p dangerouslySetInnerHTML={{ __html: html }}></p>
+      <p>{rawMarkdownBody}</p>
     </StyledSection>
   );
 };
