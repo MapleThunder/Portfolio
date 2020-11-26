@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "../images/skills/web.png",
+    "name": "Web Design & Development",
+    "tech": "HTML/CSS/JavaScript"
+  },
+  {
+    "icon": "../images/skills/react.png",
+    "name": "Frontend JavaScript Frameworks",
+    "tech": "React/Gatsby"
+  },
+  {
+    "icon": "../images/skills/database.png",
+    "name": "Database Management System",
+    "tech": "MySQL/Postgres/MongoDB"
+  },
+  {
+    "icon": "../images/skills/unity.png",
+    "name": "Game Development",
+    "tech": "C#/Unity/Blender"
+  },
+  {
+    "icon": "../images/skills/drupal.png",
+    "name": "Drupal Development",
+    "tech": "Drupal 7+/PHP/JavaScript/Drupal Migrations"
+  },
+  {
+    "icon": "../images/skills/photography.png",
+    "name": "Modern CSS Design",
+    "tech": "CCS3/SCSS/CSS Grid/Flexbox"
+  }
+]
