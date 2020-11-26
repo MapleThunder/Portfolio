@@ -68,13 +68,13 @@ const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
       <li>
-        <Link to="#about">About</Link>
+        <Link to="/#about">About</Link>
       </li>
       <li>
-        <Link to="#skills">Skills</Link>
+        <Link to="/#skills">Skills</Link>
       </li>
       <li>
-        <Link to="#contact">Contact</Link>
+        <Link to="/#contact">Contact</Link>
       </li>
       <li>
         <Link to={twitterLink} className="icon">
