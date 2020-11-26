@@ -3,14 +3,8 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 
 const StyledSection = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
   padding: 0;
-
-  & > div {
-    width: 48%;
-  }
 
   .hero-text {
     .first-line {
@@ -20,7 +14,7 @@ const StyledSection = styled.section`
   }
 
   .hero-image {
-    width: 40%;
+    width: 100%;
     justify-self: end;
     .me {
       border: solid 1px var(--grey);
@@ -36,8 +30,25 @@ const StyledSection = styled.section`
   }
   .highlighted {
     box-shadow: inset 0 -2.5rem 0 var(--accent);
-
     font-size: inherit;
+  }
+
+  @media only screen and (min-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > div {
+      width: 75%;
+    }
+    .hero-image {
+      width: 25%;
+    }
+  }
+  @media only screen and (min-width: 800px) {
+    & > div {
+      width: 48%;
+    }
   }
 `;
 

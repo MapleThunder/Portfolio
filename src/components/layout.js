@@ -7,7 +7,11 @@ import "../styles/main.css";
 import "../styles/style.css";
 
 const Main = styled.main`
-  padding: calc(4rem + var(--headerHeight)) var(--containerPadding);
+  padding: calc(2rem + var(--headerHeight)) var(--containerPadding);
+
+  @media only screen and (min-width: 800px) {
+    padding: calc(4rem + var(--headerHeight)) var(--containerPadding);
+  }
 `;
 
 const Layout = ({ children }) => {

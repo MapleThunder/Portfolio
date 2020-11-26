@@ -5,7 +5,7 @@ import GatsbyImage from "gatsby-image";
 
 const SkillsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 20px;
 
   h2 {
@@ -47,6 +47,13 @@ const SkillsWrapper = styled.div`
       grid-row: 2 / 3;
       grid-column: 2 / 3;
     }
+  }
+
+  @media only screen and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (min-width: 800px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
