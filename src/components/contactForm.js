@@ -77,9 +77,11 @@ const ContactForm = () => {
         </div>
         <div>
           <label for="message">Message</label>
-          <textarea name="message" id="message">
-            Enter your message here
-          </textarea>
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Enter your message."
+          ></textarea>
         </div>
         <button type="submit">
           Send
