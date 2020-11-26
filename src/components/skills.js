@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import GatsbyImage from "gatsby-image";
 
-const SkillsWrapper = styled.div`
+const SkillsWrapper = styled.section`
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -80,7 +80,7 @@ const Skills = () => {
   `);
 
   return (
-    <SkillsWrapper id="skills">
+    <SkillsWrapper id="skills" tabIndex="0">
       <h2>Skills</h2>
       <p>A short paragraph about my skills</p>
       {data.allSkillsJson.edges.map(skill => {

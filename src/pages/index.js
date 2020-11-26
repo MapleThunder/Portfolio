@@ -8,6 +8,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Section from "../components/section";
 import Skills from "../components/skills";
+import ContactForm from "../components/contactForm";
 
 const IndexPage = ({ data }) => {
   const { hero, file, about } = data;
@@ -20,6 +21,7 @@ const IndexPage = ({ data }) => {
         <Hero content={hero.edges[0].node} image={file.childImageSharp} />
         <Section content={about.edges[0].node} />
         <Skills />
+        <ContactForm />
       </Layout>
       <Footer />
     </>
