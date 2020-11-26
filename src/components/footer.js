@@ -2,17 +2,18 @@ import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
-import { COLOURS } from "../styles";
-
-const FooterWrapper = styled.footer`
-  background: ${COLOURS.bdazzledBlue};
-  height: 100px;
-  width: 100%;
-  bottom: 0;
+const StyledFooter = styled.footer`
+  .copyright {
+    font-size: var(--textSmall);
+  }
 `;
 
 const Footer = ({ siteTitle }) => {
-  return <footer></footer>;
+  return (
+    <StyledFooter>
+      <p className="copyright">&copy; Niko Bentley 2020</p>
+    </StyledFooter>
+  );
 };
 
 Footer.propTypes = {
