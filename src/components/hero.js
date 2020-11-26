@@ -49,6 +49,9 @@ const StyledSection = styled.section`
     & > div {
       width: 48%;
     }
+    .hero-image {
+      width: 40%;
+    }
   }
 `;
 
