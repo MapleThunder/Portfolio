@@ -27,11 +27,11 @@ const Nav = styled.nav`
   }
 `;
 
-const Navbar = () => {
+const Navbar = ({ title }) => {
   return (
     <Nav>
       <Link to="/" className="logo">
-        NB
+        {title}
       </Link>
       <Burger />
     </Nav>
