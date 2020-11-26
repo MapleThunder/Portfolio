@@ -276,31 +276,6 @@ button:hover {
   padding: calc(3rem + var(--headerHeight)) var(--containerPadding);
 }
 
-.grid {
-  --gridCols: 2;
-  display: block;
-  grid-template-columns: repeat(var(--gridCols), 1fr);
-}
-
-.flex {
-  --justifyContent: space-between;
-
-  display: block;
-  justify-content: var(--justifyContent);
-}
-
-@media only screen and (min-width: 500px) {
-  :root {
-    --baseFontSize: 112.5%;
-  }
-  .grid {
-    display: grid;
-  }
-  .flex {
-    display: flex;
-  }
-}
-
 .fake-logo {
   font-size: var(--baseFontSize);
   margin: 0;
