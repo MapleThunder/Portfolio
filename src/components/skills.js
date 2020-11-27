@@ -82,7 +82,7 @@ const Skills = () => {
   return (
     <SkillsWrapper id="skills" tabIndex="0">
       <h2>Skills</h2>
-      <p>A short paragraph about my skills</p>
+      {/* todo: add intro paragraph */}
       {data.allSkillsJson.edges.map(skill => {
         return (
           <div className="skill-card" key={skill.node.id}>
