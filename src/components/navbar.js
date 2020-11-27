@@ -6,10 +6,12 @@ import Burger from "./burger";
 
 const Nav = styled.nav`
   width: 100%;
-  height: 55px;
+  height: var(--headerHeight);
   padding: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   a.logo {
     font-size: var(--h2);
     font-family: var(--headingFont);
