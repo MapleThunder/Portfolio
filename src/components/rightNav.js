@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { AiFillTwitterCircle, AiFillGithub } from "react-icons/ai";
+import ThemeToggle from "./themeToggle";
 
 const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+
   li + li {
     padding-left: 20px;
   }
@@ -30,8 +32,9 @@ const Ul = styled.ul`
     width: 300px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
+
     li {
-      color: #fff;
+      color: var(--white);
 
       &:first-child {
         padding-bottom: 10px;
@@ -83,6 +86,9 @@ const RightNav = ({ open }) => {
         <Link to={githubLink} className="icon">
           <AiFillGithub />
         </Link>
+      </li>
+      <li>
+        <ThemeToggle />
       </li>
     </Ul>
   );
