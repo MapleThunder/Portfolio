@@ -82,7 +82,11 @@ const Skills = () => {
   return (
     <SkillsWrapper id="skills" tabIndex="0">
       <h2>Skills</h2>
-      {/* todo: add intro paragraph */}
+      <p>
+        Over my career I have tried to stay curious. This curiosity has allowed
+        me to acquire skills and knowledge in technologies as my work required,
+        or as my interest led me.
+      </p>
       {data.allSkillsJson.edges.map(skill => {
         return (
           <div className="skill-card" key={skill.node.id}>
