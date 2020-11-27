@@ -314,4 +314,5 @@ button:hover {
   --footerBackground: var(--bdazzledBlue);
   --primary: var(--bdazzledBlue);
   --accent: var(--honeyYellow);
+  --buttonTextColour: var(--lightGrey);
 }

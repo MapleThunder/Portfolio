@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
-import GatsbyImage from "gatsby-image";
+import { BsEnvelope } from "react-icons/bs";
+import { BiEnvelope } from "react-icons/bi";
 
 const Form = styled.form`
   input,
@@ -19,8 +20,12 @@ const Form = styled.form`
     display: flex;
     align-items: center;
 
-    .envelope {
+    svg {
       margin-left: 5px;
+    }
+
+    &:hover {
+      color: var(--black);
     }
   }
 
@@ -85,11 +90,7 @@ const ContactForm = () => {
         </div>
         <button type="submit">
           Send
-          <GatsbyImage
-            alt="Envelope"
-            className="envelope"
-            {...data.file.childImageSharp}
-          />
+          <BiEnvelope />
         </button>
       </Form>
     </section>
