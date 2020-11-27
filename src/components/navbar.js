@@ -24,7 +24,7 @@ const Nav = styled.nav`
     &:focus {
       background-color: var(--accent);
       border: solid 2px var(--accent);
-      color: var(--textColour);
+      color: var(--black);
     }
   }
 `;
