@@ -86,12 +86,12 @@ const RightNav = ({ open }) => {
         <Link to="/#contact">Contact</Link>
       </li>
       <li className="social-links">
-        <Link to={twitterLink} className="icon">
+        <a href={twitterLink} className="icon">
           <AiFillTwitterCircle />
-        </Link>
-        <Link to={githubLink} className="icon">
+        </a>
+        <a href={githubLink} className="icon">
           <AiFillGithub />
-        </Link>
+        </a>
       </li>
       <li className="toggle-wrapper">
         <ThemeToggle />
