@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import GatsbyImage from "gatsby-image";
 import styled from "styled-components";
@@ -10,7 +10,6 @@ const WorkSection = styled.section`
     flex-direction: column;
 
     .work-card {
-      /* border: solid 2px var(--grey); */
       border-radius: var(--borderRadius);
       /* background-color: var(--cardBg); */
       box-shadow: var(--level-2);
@@ -58,6 +57,11 @@ const WorkSection = styled.section`
 
 const Work = () => {
   const [max, setMax] = useState(4);
+  const [theme, setTheme] = useState(
+    document.getElementById("body").classList.contains("dark")
+      ? "dark"
+      : "light"
+  );
   const data = useStaticQuery(graphql`
     {
       allWorkJson {
@@ -89,6 +93,25 @@ const Work = () => {
     }
   `);
 
+  const callback = (mutationsList, observer) => {
+    mutationsList.forEach(mutation => {
+      if (mutation.attributeName === "class") {
+        setTheme(mutation.target.className);
+      }
+    });
+  };
+  const mutationObserver = new MutationObserver(callback);
+
+  useEffect(() => {
+    mutationObserver.observe(document.getElementById("body"), {
+      attributes: true,
+    });
+
+    return () => {
+      mutationObserver.disconnect();
+    };
+  }, []);
+
   return (
     <WorkSection>
       <h2>Work Experience</h2>
@@ -98,16 +121,14 @@ const Work = () => {
           if (index >= max) {
             return null;
           }
-          let cardImage = null;
-          if (document.getElementById("body").classList.contains("dark")) {
-            cardImage = node.icon_dark.childImageSharp;
-          } else {
-            cardImage = node.icon_light.childImageSharp;
-          }
 
           return (
             <div key={node.id} className="work-card">
-              <GatsbyImage {...cardImage} />
+              {theme === "dark" ? (
+                <GatsbyImage {...node.icon_dark.childImageSharp} />
+              ) : (
+                <GatsbyImage {...node.icon_light.childImageSharp} />
+              )}
               <p className="title">{node.title}</p>
               <span>({node.period})</span>
               <p>{node.subtitle}</p>
