@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
-import { BsEnvelope } from "react-icons/bs";
 import { BiEnvelope } from "react-icons/bi";
 
 const Form = styled.form`
@@ -48,18 +46,6 @@ const Form = styled.form`
 `;
 
 const ContactForm = () => {
-  const data = useStaticQuery(graphql`
-    {
-      file(relativePath: { eq: "envelope.png" }) {
-        childImageSharp {
-          fixed(width: 20, height: 20) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <section id="contact">
       <h2 id="contact">Contact Me</h2>
