@@ -57,10 +57,6 @@ const Ul = styled.ul`
         background-color: var(--accent);
       }
     }
-    &:hover,
-    &:focus {
-      background-color: var(--accent);
-    }
   }
 `;
 
