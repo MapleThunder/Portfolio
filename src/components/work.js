@@ -59,13 +59,9 @@ const Work = () => {
   const [max, setMax] = useState(4);
   const isBrowser = typeof document !== "undefined";
   let __theme = null;
-
   if (isBrowser) {
-    __theme = document.getElementById("body").classList.contains("dark")
-      ? "dark"
-      : "light";
+    __theme = document.body.classList.contains("dark") ? "dark" : "light";
   }
-
   const [theme, setTheme] = useState(__theme);
   const data = useStaticQuery(graphql`
     {
@@ -98,6 +94,7 @@ const Work = () => {
     }
   `);
 
+  let mutationObserver = null;
   if (isBrowser) {
     const callback = (mutationsList, observer) => {
       mutationsList.forEach(mutation => {
@@ -106,18 +103,21 @@ const Work = () => {
         }
       });
     };
-    const mutationObserver = new MutationObserver(callback);
+    mutationObserver = new MutationObserver(callback);
+  }
 
-    useEffect(() => {
-      mutationObserver.observe(document.getElementById("body"), {
+  useEffect(() => {
+    if (mutationObserver !== null) {
+      mutationObserver.observe(document.body, {
         attributes: true,
       });
-
-      return () => {
+    }
+    return () => {
+      if (mutationObserver !== null) {
         mutationObserver.disconnect();
-      };
-    }, []);
-  }
+      }
+    };
+  }, []);
 
   return (
     <WorkSection>
