@@ -21,10 +21,10 @@ const WorkSection = styled.section`
       .gatsby-image-wrapper {
         grid-column: 1 / -1;
       }
-      h3 {
-        font-size: var(--h4);
+      p.title {
+        font-size: var(--h5);
         margin: 0;
-        display: inline-block;
+        grid-column: 1 / 2;
       }
       span {
         font-size: var(--smallText);
@@ -108,7 +108,7 @@ const Work = () => {
           return (
             <div key={node.id} className="work-card">
               <GatsbyImage {...cardImage} />
-              <h3>{node.title}</h3>
+              <p className="title">{node.title}</p>
               <span>({node.period})</span>
               <p>{node.subtitle}</p>
               <p className="location">
