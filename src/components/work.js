@@ -57,11 +57,16 @@ const WorkSection = styled.section`
 
 const Work = () => {
   const [max, setMax] = useState(4);
-  const [theme, setTheme] = useState(
-    document.getElementById("body").classList.contains("dark")
+  const isBrowser = typeof document !== "undefined";
+  let __theme = null;
+
+  if (isBrowser) {
+    __theme = document.getElementById("body").classList.contains("dark")
       ? "dark"
-      : "light"
-  );
+      : "light";
+  }
+
+  const [theme, setTheme] = useState(__theme);
   const data = useStaticQuery(graphql`
     {
       allWorkJson {
@@ -93,24 +98,26 @@ const Work = () => {
     }
   `);
 
-  const callback = (mutationsList, observer) => {
-    mutationsList.forEach(mutation => {
-      if (mutation.attributeName === "class") {
-        setTheme(mutation.target.className);
-      }
-    });
-  };
-  const mutationObserver = new MutationObserver(callback);
-
-  useEffect(() => {
-    mutationObserver.observe(document.getElementById("body"), {
-      attributes: true,
-    });
-
-    return () => {
-      mutationObserver.disconnect();
+  if (isBrowser) {
+    const callback = (mutationsList, observer) => {
+      mutationsList.forEach(mutation => {
+        if (mutation.attributeName === "class") {
+          setTheme(mutation.target.className);
+        }
+      });
     };
-  }, []);
+    const mutationObserver = new MutationObserver(callback);
+
+    useEffect(() => {
+      mutationObserver.observe(document.getElementById("body"), {
+        attributes: true,
+      });
+
+      return () => {
+        mutationObserver.disconnect();
+      };
+    }, []);
+  }
 
   return (
     <WorkSection>
