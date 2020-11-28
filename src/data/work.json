@@ -1,18 +1,20 @@
 [
   {
-    "icon": "../images/work/postman.png",
-    "title": "Aptitude Digital",
-    "subtitle": "Web Developer",
-    "period": "Jun '17 - Nov '20",
-    "location": "Halifax, Canada",
-    "specialization": "Drupal Development, PHP, JavaScript"
-  },
-  {
-    "icon": "../images/work/dhiyo.png",
+    "icon_light": "../images/work/bluelight_analytics.png",
+    "icon_dark": "../images/work/bluelight_analytics.png",
     "title": "Blue Light Analytics",
     "subtitle": "Software Developer",
     "period": "Jun '16 - May '17",
     "location": "Halifax, Canada",
     "specialization": "PHP, Phalcon, Angular, Ionic, Cordova, PouchDB"
+  },
+  {
+    "icon_light": "../images/work/aptitude_digital-dark.png",
+    "icon_dark": "../images/work/aptitude_digital-light.png",
+    "title": "Aptitude Digital",
+    "subtitle": "Web Developer",
+    "period": "Jun '17 - Nov '20",
+    "location": "Halifax, Canada",
+    "specialization": "Drupal Development, PHP, JavaScript"
   }
 ]

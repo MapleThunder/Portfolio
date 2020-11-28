@@ -9,6 +9,7 @@ import Footer from "../components/footer";
 import Section from "../components/section";
 import Skills from "../components/skills";
 import ContactForm from "../components/contactForm";
+import Work from "../components/work";
 
 const IndexPage = ({ data }) => {
   const { hero, file, about } = data;
@@ -20,6 +21,7 @@ const IndexPage = ({ data }) => {
         <SEO title="Home" />
         <Hero content={hero.edges[0].node} image={file.childImageSharp} />
         <Section content={about.edges[0].node} />
+        <Work />
         <Skills />
         <ContactForm />
       </Layout>
