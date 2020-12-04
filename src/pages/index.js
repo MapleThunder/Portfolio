@@ -4,8 +4,6 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Hero from "../components/hero";
-import Header from "../components/header";
-import Footer from "../components/footer";
 import Section from "../components/section";
 import Skills from "../components/skills";
 import ContactForm from "../components/contactForm";
