@@ -63,6 +63,10 @@ html {
   font-size: var(--baseFontSize); /*18px*/
   box-sizing: border-box;
 }
+html,
+body {
+  min-height: 100vh;
+}
 
 *,
 *::before,
@@ -118,6 +122,10 @@ footer {
   width: 100%;
   padding: 2rem var(--containerPadding);
   text-align: center;
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 footer a {
@@ -284,9 +292,8 @@ button:hover {
 .card {
   padding: 2em;
   background-color: var(--cardBg);
-  box-shadow: var(--level-3);
+  box-shadow: var(--level-1);
   border-radius: var(--borderRadius);
-  /* border: var(--debugBorder); */
 }
 /* First item will never have margin top */
 .card > *:first-child {
@@ -296,12 +303,6 @@ button:hover {
 /* Last item will never have margin bottom */
 .card > *:last-child {
   margin-bottom: 0;
-}
-
-.split {
-  display: grid;
-  grid-template-columns: 33% 67%;
-  gap: 20px;
 }
 
 /* Themes */

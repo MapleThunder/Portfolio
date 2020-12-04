@@ -16,7 +16,6 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <Header siteTitle="NB" />
       <Layout>
         <SEO title="Home" />
         <Hero content={hero.edges[0].node} image={file.childImageSharp} />
@@ -25,7 +24,6 @@ const IndexPage = ({ data }) => {
         <Skills />
         <ContactForm />
       </Layout>
-      <Footer />
     </>
   );
 };
