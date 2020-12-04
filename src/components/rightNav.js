@@ -35,7 +35,7 @@ const Ul = styled.ul`
     transition: transform 0.3s ease-in-out;
 
     li {
-      color: var(--white);
+      /* color: var(--white); */
       width: 100%;
       padding: 10px 0 10px 40px;
 
@@ -62,10 +62,6 @@ const Ul = styled.ul`
       &:focus {
         background-color: var(--accent);
       }
-      /* &.icon:hover,
-      &.icon:focus {
-        background-color: var(--primary);
-      } */
     }
   }
 `;

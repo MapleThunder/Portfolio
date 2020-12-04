@@ -12,7 +12,7 @@ const Toggle = styled.div`
     display: inline-block;
     width: 40px;
     height: 20px;
-    background-color: var(--cardBg);
+    background-color: var(--textColour);
     border-radius: 20px;
 
     &::after {

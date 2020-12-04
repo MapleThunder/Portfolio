@@ -84,7 +84,6 @@ body {
 }
 
 header {
-  color: white;
   height: var(--headerHeight);
   position: fixed;
   left: 0;
@@ -100,9 +99,9 @@ header {
 }
 
 header nav a {
-  color: white;
+  color: var(--textColour);
   text-decoration: none;
-  border-bottom: solid 2px white;
+  border-bottom: solid 2px var(--textColour);
 }
 
 header nav a + a {
