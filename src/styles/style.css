@@ -5,7 +5,8 @@
   --blanchedAlmond: #fcecc9;
   --honeyYellow: #f2ad18;
   --lightPink: #fcb0b3;
-  --redSalsa: #f93943;
+  /* --redSalsa: #f93943; */
+  --redSalsa: #ff424f;
   --aero: #7eb2dd;
   --bdazzledBlue: #445e93;
   --black: #222;
@@ -315,5 +316,5 @@ button:hover {
   --footerBackground: var(--bdazzledBlue);
   --primary: var(--bdazzledBlue);
   --accent: var(--honeyYellow);
-  --buttonTextColour: var(--lightGrey);
+  /* --buttonTextColour: var(--lightGrey); */
 }

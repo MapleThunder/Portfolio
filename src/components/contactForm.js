@@ -17,7 +17,7 @@ const Form = styled.form`
     margin-top: 25px;
     display: flex;
     align-items: center;
-
+    color: var(--textColour);
     svg {
       margin-left: 5px;
     }

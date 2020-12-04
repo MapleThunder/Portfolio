@@ -29,7 +29,8 @@ const StyledSection = styled.section`
     margin-top: 0;
   }
   .highlighted {
-    box-shadow: inset 0 -2.5rem 0 var(--accent);
+    box-shadow: inset 0 -2.5rem 0 var(--redSalsa);
+    /* color: var(--black); */
     font-size: inherit;
   }
 
