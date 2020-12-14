@@ -5,7 +5,6 @@
   --blanchedAlmond: #fcecc9;
   --honeyYellow: #f2ad18;
   --lightPink: #fcb0b3;
-  /* --redSalsa: #f93943; */
   --redSalsa: #ff424f;
   --aero: #7eb2dd;
   --bdazzledBlue: #445e93;
@@ -18,7 +17,7 @@
   /* Define the colour's intentions */
   --background: var(--lightGrey);
   --textColour: var(--black);
-  --primary: var(--aero);
+  --primary: var(--bdazzledBlue);
   --accent: var(--honeyYellow);
   --danger: var(--redSalsa);
   --lineColour: var(--textColour);
@@ -99,9 +98,9 @@ header {
 }
 
 header nav a {
-  color: var(--textColour);
+  color: var(--white);
   text-decoration: none;
-  border-bottom: solid 2px var(--textColour);
+  border-bottom: solid 2px var(--white);
 }
 
 header nav a + a {
@@ -117,6 +116,7 @@ header nav a:focus {
 
 footer {
   --footerTextColour: var(--lightGrey);
+
   background-color: var(--footerBackground);
   color: var(--footerTextColour);
   width: 100%;
@@ -161,7 +161,8 @@ p a:hover,
 p a:focus,
 blockquote a:hover,
 blockquote a:focus {
-  background-color: var(--primary);
+  background-color: var(--accent);
+  border-bottom: solid 2px var(--accent);
 }
 
 h1,
