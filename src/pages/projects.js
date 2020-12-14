@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import styled from "styled-components";
@@ -26,23 +26,29 @@ const ProjectsWrapper = styled.section`
           font-size: var(--h4);
           font-family: var(--headingFont);
           display: block;
-        }
-        .tags {
-          display: block;
 
-          .tag {
-            display: inline-block;
+          &:hover,
+          &:focus {
             background-color: var(--accent);
-            padding: 0 10px;
-            min-width: 40px;
-            margin-left: 3px;
-            margin-top: 4px;
-            border-radius: 15px;
-            color: var(--black);
+          }
+        }
+      }
+      .tags {
+        /* display: block; */
+        grid-column: 2 / 3;
 
-            &:first-child {
-              margin-left: 0;
-            }
+        .tag {
+          display: inline-block;
+          background-color: var(--accent);
+          padding: 0 10px;
+          min-width: 40px;
+          margin-left: 3px;
+          margin-top: 4px;
+          border-radius: 15px;
+          color: var(--black);
+
+          &:first-child {
+            margin-left: 0;
           }
         }
       }
@@ -89,8 +95,7 @@ const Projects = ({ data }) => {
           </p>
           <div className="project-list">
             {projects.edges.map(project => {
-              console.log(project);
-              const { frontmatter } = project.node;
+              const { frontmatter, fields } = project.node;
 
               return (
                 <div className="card" key={frontmatter.project_id}>
@@ -99,14 +104,20 @@ const Projects = ({ data }) => {
                     {...frontmatter.main_image.childImageSharp}
                   />
                   <p className="description">
-                    <span className="title">{frontmatter.title}</span>
+                    <Link to={fields.slug} className="title">
+                      {frontmatter.title}
+                    </Link>
                     {frontmatter.teaser}
-                    <div className="tags">
-                      {frontmatter.tags.map(tag => {
-                        return <div className="tag">{tag}</div>;
-                      })}
-                    </div>
                   </p>
+                  <div className="tags">
+                    {frontmatter.tags.map(tag => {
+                      return (
+                        <div className="tag" key={tag}>
+                          {tag}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               );
             })}
@@ -126,6 +137,9 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
             title
             project_id
