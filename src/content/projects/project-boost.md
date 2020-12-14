@@ -1,7 +1,7 @@
 ---
 title: "Project Boost"
 type_id: project
-project_id: cb7ada42-7b2d-4ea1-b535-0683b10de433
+project_id: project-boost
 main_image: "../../images/me.jpg"
 teaser: "Pilot your ship safely through caverns"
 tags:
@@ -40,9 +40,4 @@ I used the OnCollisionEnter function to provide behaviour for when the rocket to
 
 To add difficulty to the levels I created a simple Oscillator.cs script to make terrain objects move. This was as simple as adjusting an objects transform between two values over time. This script was added to pieces of terrain in some levels to make them more challenging.
 
-## Try It Out !
-
-### Controls
-
-Space - Thrusters
-← → - Tilt the rocket
+## [Try It Out !](/project-boost)

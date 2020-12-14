@@ -1,7 +1,7 @@
 ---
 title: "Portfolio"
 type_id: project
-project_id: 6d39e1b3-a8f0-4dbb-9424-4769619794f8
+project_id: portfolio
 main_image: "../../images/me.jpg"
 teaser: "The site you're currently on !"
 tags:
