@@ -5,7 +5,6 @@ import styled from "styled-components";
 const StyledFooter = styled.footer`
   .copyright {
     font-size: var(--textSmall);
-    color: var(--textColour);
   }
 `;
 

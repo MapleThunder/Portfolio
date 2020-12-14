@@ -12,7 +12,7 @@ const Toggle = styled.div`
     display: inline-block;
     width: 40px;
     height: 20px;
-    background-color: var(--textColour);
+    background-color: var(--cardBg);
     border-radius: 20px;
 
     &::after {
@@ -39,6 +39,8 @@ const Toggle = styled.div`
   }
   svg {
     margin-right: 5px;
+    color: white;
+
     &.yellow {
       color: var(--accent);
     }

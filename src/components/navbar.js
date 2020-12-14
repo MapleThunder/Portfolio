@@ -15,7 +15,7 @@ const Nav = styled.nav`
   a.logo {
     font-size: var(--h2);
     font-family: var(--headingFont);
-    color: var(--textColour);
+    color: var(--white);
     text-decoration: none;
     line-height: 2.5rem;
     border: solid 2px transparent;
