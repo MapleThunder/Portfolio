@@ -18,6 +18,8 @@ The goal of Project Boost is to pilot your rocket from the blue launch pad past 
 
 There is only 4 levels, but one mistake sends you back to the start !
 
+[Try It Out !](/project-boost)
+
 ## How I Did It
 
 ### Models
@@ -39,5 +41,3 @@ I used the OnCollisionEnter function to provide behaviour for when the rocket to
 - Default (anything else): The rocket explodes and the player loses.
 
 To add difficulty to the levels I created a simple Oscillator.cs script to make terrain objects move. This was as simple as adjusting an objects transform between two values over time. This script was added to pieces of terrain in some levels to make them more challenging.
-
-## [Try It Out !](/project-boost)
