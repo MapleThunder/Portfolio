@@ -1,14 +1,24 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import styled from "styled-components";
+
+const ProjectWrapper = styled.section`
+  hr {
+    width: 66%;
+  }
+`;
 
 const Project = ({ data }) => {
   const proj = data.markdownRemark;
 
   return (
     <Layout>
-      <h1>{proj.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: proj.html }} />
+      <ProjectWrapper>
+        <h1>{proj.frontmatter.title}</h1>
+        <hr />
+        <div dangerouslySetInnerHTML={{ __html: proj.html }} />
+      </ProjectWrapper>
     </Layout>
   );
 };
