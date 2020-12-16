@@ -18,7 +18,7 @@ The goal of Project Boost is to pilot your rocket from the blue launch pad past 
 
 There is only 4 levels, but one mistake sends you back to the start !
 
-[Try It Out !](/project-boost)
+[Try It Out !](/game/project-boost)
 
 ## How I Did It
 

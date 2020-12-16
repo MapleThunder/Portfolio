@@ -1,13 +1,18 @@
 import React from "react";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
 import styled from "styled-components";
+import { Game } from "../../components/game";
 
 const ProjectBoostGame = styled.section`
   .game {
     background: var(--grey);
     width: 600px;
     height: 400px;
+  }
+  .accent {
+    background-color: var(--accent);
+    color: var(--black);
   }
 `;
 
@@ -27,7 +32,9 @@ const Projects = () => {
             There is only 4 levels, but one mistake sends you back to the start
             !
           </p>
-          <div className="game">GAME WINDOW</div>
+          <p>
+            <span className="accent">Embedded game coming soon !</span>
+          </p>
         </ProjectBoostGame>
       </Layout>
     </>

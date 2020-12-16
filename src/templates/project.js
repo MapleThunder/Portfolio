@@ -5,7 +5,11 @@ import styled from "styled-components";
 
 const ProjectWrapper = styled.section`
   hr {
-    width: 66%;
+    width: 90%;
+
+    @media only screen and (min-width: 800px) {
+      width: 66%;
+    }
   }
 `;
 
