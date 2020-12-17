@@ -69,6 +69,7 @@ body {
   --containerPadding: 5%;
   --headerHeight: 4rem;
   --borderRadius: 10px;
+  --contentWidth: 40em;
 
   /* Default Body Styles */
   font-family: var(--bodyFont);
@@ -143,7 +144,7 @@ footer p {
 
 p {
   margin-bottom: 1rem;
-  max-width: 40em;
+  max-width: var(--contentWidth);
 }
 
 p a,
@@ -290,10 +291,10 @@ code {
   word-wrap: break-word;
 }
 pre {
-  background: #f4f4f4;
-  border: 1px solid #ddd;
+  background: var(--cardBg);
+  border: 1px solid var(--grey);
   border-left: 3px solid var(--accent);
-  color: #666;
+  color: var(--textColour);
   page-break-inside: avoid;
   font-family: monospace;
   font-size: 15px;
@@ -304,6 +305,14 @@ pre {
   padding: 1em 1.5em;
   display: block;
   word-wrap: break-word;
+}
+pre code {
+  border: none;
+}
+@media only screen and (min-width: 600px) {
+  pre {
+    max-width: calc(var(--contentWidth) * 1.5);
+  }
 }
 
 .layout {
