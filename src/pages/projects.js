@@ -34,7 +34,6 @@ const ProjectsWrapper = styled.section`
         }
       }
       .tags {
-        /* display: block; */
         grid-column: 2 / 3;
 
         .tag {
@@ -64,7 +63,7 @@ const ProjectsWrapper = styled.section`
     }
 
     img {
-      border-radius: 50%;
+      border-radius: var(--borderRadius);
     }
 
     @media only screen and (min-width: 600px) {
@@ -99,10 +98,12 @@ const Projects = ({ data }) => {
 
               return (
                 <div className="card" key={frontmatter.project_id}>
-                  <GatsbyImage
-                    className="icon"
-                    {...frontmatter.main_image.childImageSharp}
-                  />
+                  {frontmatter.main_image && (
+                    <GatsbyImage
+                      className="icon"
+                      {...frontmatter.main_image.childImageSharp}
+                    />
+                  )}
                   <p className="description">
                     <Link to={fields.slug} className="title">
                       {frontmatter.title}

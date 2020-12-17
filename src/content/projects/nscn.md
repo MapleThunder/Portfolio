@@ -2,7 +2,7 @@
 title: "Search for a Nurse"
 type_id: project
 project_id: search-for-nurse
-main_image: "../../images/me.jpg"
+main_image: "../../images/projects/nscn-logo.png"
 teaser: "A custom Drupal 8 module to display data from multiple APIs"
 tags:
   - Drupal 8
