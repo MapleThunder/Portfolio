@@ -1,6 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:400|Space+Mono:400|Dosis:400|Open+Sans:400");
 
-:root {
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
   /* Define colours as colours */
   --blanchedAlmond: #fcecc9;
   --honeyYellow: #f2ad18;
@@ -10,7 +25,6 @@
   --bdazzledBlue: #445e93;
   --black: #222;
   --grey: #bfbfbf;
-  /* --lightGrey: #f2f4f6; */
   --lightGrey: #eee;
   --white: #fff;
 
@@ -27,7 +41,6 @@
   --buttonTextColour: var(--black);
 
   /* Styles */
-  --debugBorder: dashed 2px red;
   --line: solid 1px var(--lineColour);
 
   /* Type */
@@ -56,25 +69,8 @@
   --containerPadding: 5%;
   --headerHeight: 4rem;
   --borderRadius: 10px;
-}
 
-/* FROM Type Scale */
-html {
-  font-size: var(--baseFontSize); /*18px*/
-  box-sizing: border-box;
-}
-html,
-body {
-  min-height: 100vh;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
+  /* Default Body Styles */
   font-family: var(--bodyFont);
   font-weight: 400;
   line-height: 1.75;
@@ -279,6 +275,35 @@ button.small {
 button:hover {
   --buttonColour: var(--accent);
   box-shadow: var(--level-2);
+}
+
+code {
+  background: var(--cardBg);
+  border: 1px solid var(--grey);
+  border-left: 3px solid var(--accent);
+  color: var(--textColour);
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: var(--baseFontSize);
+  overflow: auto;
+  padding: 0.25em 0.5em;
+  word-wrap: break-word;
+}
+pre {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid var(--accent);
+  color: #666;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em 1.5em;
+  display: block;
+  word-wrap: break-word;
 }
 
 .layout {
