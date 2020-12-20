@@ -2,7 +2,8 @@
   {
     "icon_light": "../images/work/bluelight_analytics.png",
     "icon_dark": "../images/work/bluelight_analytics.png",
-    "title": "Blue Light Analytics",
+    "alt": "Bluelight Analytics logo.",
+    "title": "Bluelight Analytics",
     "subtitle": "Software Developer",
     "period": "Jun '16 - May '17",
     "location": "Halifax, Canada",
@@ -11,6 +12,7 @@
   {
     "icon_light": "../images/work/aptitude_digital-dark.png",
     "icon_dark": "../images/work/aptitude_digital-light.png",
+    "alt": "Aptitude Digital logo.",
     "title": "Aptitude Digital",
     "subtitle": "Web Developer",
     "period": "Jun '17 - Nov '20",

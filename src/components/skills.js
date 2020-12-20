@@ -73,6 +73,7 @@ const Skills = () => {
                 }
               }
             }
+            alt
           }
         }
       }
@@ -92,6 +93,7 @@ const Skills = () => {
           <div className="skill-card" key={skill.node.id}>
             <GatsbyImage
               className="icon"
+              alt={skill.node.alt}
               {...skill.node.icon.childImageSharp}
             />
             <h3>{skill.node.name}</h3>

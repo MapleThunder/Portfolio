@@ -1,31 +1,37 @@
 [
   {
     "icon": "../images/skills/web.png",
+    "alt": "An icon of web.",
     "name": "Web Design & Development",
     "tech": "HTML/CSS/JavaScript"
   },
   {
     "icon": "../images/skills/react.png",
+    "alt": "The React logo.",
     "name": "Frontend JavaScript Frameworks",
     "tech": "React/Gatsby"
   },
   {
     "icon": "../images/skills/database.png",
+    "alt": "An database icon.",
     "name": "Database Management System",
     "tech": "MySQL/Postgres/MongoDB"
   },
   {
     "icon": "../images/skills/unity.png",
+    "alt": "The Unity logo.",
     "name": "Game Development",
     "tech": "C#/Unity/Blender"
   },
   {
     "icon": "../images/skills/drupal.png",
+    "alt": "The Drupal logo.",
     "name": "Drupal Development",
     "tech": "Drupal 7+/PHP/JavaScript/Drupal Migrations"
   },
   {
     "icon": "../images/skills/css3.png",
+    "alt": "The CSS3 logo.",
     "name": "Modern CSS Design",
     "tech": "CCS3/SCSS/CSS Grid/Flexbox"
   }

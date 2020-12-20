@@ -88,6 +88,7 @@ const Work = () => {
                 }
               }
             }
+            alt
           }
         }
       }
@@ -132,9 +133,15 @@ const Work = () => {
           return (
             <div key={node.id} className="work-card">
               {theme === "dark" ? (
-                <GatsbyImage {...node.icon_dark.childImageSharp} />
+                <GatsbyImage
+                  {...node.icon_dark.childImageSharp}
+                  alt={node.alt}
+                />
               ) : (
-                <GatsbyImage {...node.icon_light.childImageSharp} />
+                <GatsbyImage
+                  {...node.icon_light.childImageSharp}
+                  alt={node.alt}
+                />
               )}
               <p className="title">{node.title}</p>
               <span>({node.period})</span>
