@@ -3,6 +3,7 @@ title: "Search for a Nurse"
 type_id: project
 project_id: search-for-nurse
 main_image: "../../images/projects/nscn-logo.png"
+image_alt: "The logo for NSCN."
 teaser: "A custom Drupal 8 module to display data from multiple APIs"
 tags:
   - Drupal 8
@@ -22,7 +23,7 @@ The registry of nursing licences needs to be publicly available to search throug
 
 Since the APIs had been from two separate colleges the input parameters and fields on returned data didn't match. In order to make the search feel like it was querying a single source I had to distil the filters down to the simplest set of fields that would work for both.
 
-I abstracted the `CallApi` function performing the separate API calls into its own Drupal service class, ApiCaller. The function took in an array of filter parameters and formatted them into URLs with query parameters, called each API, then parsed both results into a single array of JSON objects.
+I abstracted the CallApi function that performed the separate API calls into its own Drupal service class, ApiCaller. The function took in an array of filter parameters and formatted them into URLs with query parameters, called each API, then parsed both results into a single array of JSON objects.
 
 ### Normalizing the Data
 

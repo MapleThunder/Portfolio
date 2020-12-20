@@ -3,6 +3,7 @@ title: "Project Boost"
 type_id: project
 project_id: project-boost
 main_image: "../../images/projects/project-boost.png"
+image_alt: "Screenshot from Project Boost"
 teaser: "Pilot your ship safely through caverns"
 tags:
   - Unity

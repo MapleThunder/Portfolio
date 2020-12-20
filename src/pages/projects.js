@@ -14,7 +14,7 @@ const ProjectsWrapper = styled.section`
 
     .card {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 100px auto;
       grid-column-gap: 20px;
       padding: 10px;
 
@@ -26,11 +26,6 @@ const ProjectsWrapper = styled.section`
           font-size: var(--h4);
           font-family: var(--headingFont);
           display: block;
-
-          &:hover,
-          &:focus {
-            background-color: var(--accent);
-          }
         }
       }
       .tags {
@@ -54,6 +49,8 @@ const ProjectsWrapper = styled.section`
 
       .icon {
         align-self: center;
+        grid-row: 1 / 3;
+        grid-column: 1 / 2;
       }
 
       &:hover,
@@ -64,13 +61,14 @@ const ProjectsWrapper = styled.section`
 
     img {
       border-radius: var(--borderRadius);
-    }
-
-    @media only screen and (min-width: 600px) {
-      grid-template-columns: repeat(2, 1fr);
+      border: solid 1px var(--grey);
     }
 
     @media only screen and (min-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (min-width: 1300px) {
       grid-template-columns: repeat(3, 1fr);
       grid-column-gap: 30px;
     }
@@ -86,12 +84,7 @@ const Projects = ({ data }) => {
         <SEO title="Projects" />
         <ProjectsWrapper>
           <h1>Projects</h1>
-          <p>
-            Massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Arcu
-            risus quis varius quam. Nunc consequat interdum varius sit amet
-            mattis vulputate enim. Duis ultricies lacus sed turpis tincidunt id
-            aliquet risus feugiat.
-          </p>
+          <p></p>
           <div className="project-list">
             {projects.edges.map(project => {
               const { frontmatter, fields } = project.node;
@@ -102,12 +95,13 @@ const Projects = ({ data }) => {
                     <GatsbyImage
                       className="icon"
                       {...frontmatter.main_image.childImageSharp}
+                      alt={frontmatter.image_alt}
                     />
                   )}
                   <p className="description">
-                    <Link to={fields.slug} className="title">
-                      {frontmatter.title}
-                    </Link>
+                    <span className="title">
+                      <Link to={fields.slug}>{frontmatter.title}</Link>
+                    </span>
                     {frontmatter.teaser}
                   </p>
                   <div className="tags">
@@ -153,6 +147,7 @@ export const pageQuery = graphql`
                 }
               }
             }
+            image_alt
           }
         }
       }

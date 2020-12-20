@@ -2,7 +2,8 @@
 title: "Portfolio"
 type_id: project
 project_id: portfolio
-main_image: "../../images/me.jpg"
+main_image: "../../images/projects/portfolio.png"
+image_alt: "A screenshot of the front page of my site."
 teaser: "The site you're currently on !"
 tags:
   - Gatsby
