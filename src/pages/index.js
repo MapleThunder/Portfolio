@@ -10,13 +10,13 @@ import ContactForm from "../components/contactForm";
 import Work from "../components/work";
 
 const IndexPage = ({ data }) => {
-  const { hero, file, about } = data;
+  const { about } = data;
 
   return (
     <>
       <Layout>
         <SEO title="Home" />
-        <Hero image={file.childImageSharp} />
+        <Hero />
         <Section content={about.edges[0].node} />
         <Work />
         <Skills />
