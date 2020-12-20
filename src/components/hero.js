@@ -56,44 +56,8 @@ const StyledSection = styled.section`
   }
 `;
 
-const Hero = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "me.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 2100) {
-            base64
-            tracedSVG
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
-            originalImg
-            originalName
-          }
-        }
-      }
-      hero: allMarkdownRemark(
-        filter: { frontmatter: { type_id: { eq: "hero-front" } } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              emoji
-              greetings
-              subtitleHighlight
-              subtitlePrefix
-              title
-            }
-            html
-          }
-        }
-      }
-    }
-  `);
-  const { frontmatter, html } = data.hero.edges[0].node;
+export const PureHero = ({ node, image }) => {
+  const { frontmatter, html } = node;
 
   return (
     <StyledSection id="hero">
@@ -119,10 +83,44 @@ const Hero = () => {
         <Img
           className="me"
           alt="A picture of me at the beach in São Jacinto, Portugal."
-          {...data.file.childImageSharp}
+          {...image.childImageSharp}
         />
       </div>
     </StyledSection>
+  );
+};
+
+export const Hero = props => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "me.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      hero: allMarkdownRemark(
+        filter: { frontmatter: { type_id: { eq: "hero-front" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              emoji
+              greetings
+              subtitleHighlight
+              subtitlePrefix
+              title
+            }
+            html
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <PureHero {...props} node={data.hero.edges[0].node} image={data.file} />
   );
 };
 
