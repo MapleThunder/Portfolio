@@ -60,7 +60,9 @@ const ThemeToggle = () => {
             onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
             checked={theme === "dark"}
           />
-          <label htmlFor="toggle" className="switch"></label>
+          <label htmlFor="toggle" className="switch">
+            &zwnj;
+          </label>
         </Toggle>
       )}
     </ThemeToggler>

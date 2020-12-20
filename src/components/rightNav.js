@@ -88,9 +88,11 @@ const RightNav = ({ open }) => {
       <li className="social-links">
         <a href={twitterLink} className="icon">
           <AiFillTwitterCircle />
+          &zwnj;
         </a>
         <a href={githubLink} className="icon">
           <AiFillGithub />
+          &zwnj;
         </a>
       </li>
       <li className="toggle-wrapper">
