@@ -12,7 +12,7 @@ export const Game = () => {
   return (
     <div>
       GAME
-      <Unity unityContext={unityContext} />
+      {/* <Unity unityContext={unityContext} /> */}
     </div>
   );
 };
