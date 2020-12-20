@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
     <>
       <Layout>
         <SEO title="Home" />
-        <Hero content={hero.edges[0].node} image={file.childImageSharp} />
+        <Hero image={file.childImageSharp} />
         <Section content={about.edges[0].node} />
         <Work />
         <Skills />
@@ -30,38 +30,6 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query {
-    file(relativePath: { eq: "me.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2100) {
-          base64
-          tracedSVG
-          aspectRatio
-          src
-          srcSet
-          srcWebp
-          srcSetWebp
-          sizes
-          originalImg
-          originalName
-        }
-      }
-    }
-    hero: allMarkdownRemark(
-      filter: { frontmatter: { type_id: { eq: "hero-front" } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            emoji
-            greetings
-            subtitleHighlight
-            subtitlePrefix
-            title
-          }
-          html
-        }
-      }
-    }
     about: allMarkdownRemark(
       filter: { frontmatter: { type_id: { eq: "about" } } }
     ) {

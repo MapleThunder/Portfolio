@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
 const StyledSection = styled.section`
@@ -30,7 +31,6 @@ const StyledSection = styled.section`
   }
   .highlighted {
     box-shadow: inset 0 -2.5rem 0 var(--redSalsa);
-    /* color: var(--black); */
     font-size: inherit;
   }
 
@@ -56,13 +56,49 @@ const StyledSection = styled.section`
   }
 `;
 
-const Hero = ({ content, image }) => {
-  const { frontmatter, html } = content;
+const Hero = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "me.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2100) {
+            base64
+            tracedSVG
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
+            originalImg
+            originalName
+          }
+        }
+      }
+      hero: allMarkdownRemark(
+        filter: { frontmatter: { type_id: { eq: "hero-front" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              emoji
+              greetings
+              subtitleHighlight
+              subtitlePrefix
+              title
+            }
+            html
+          }
+        }
+      }
+    }
+  `);
+  const { frontmatter, html } = data.hero.edges[0].node;
 
   return (
     <StyledSection id="hero">
       <div className="hero-text">
-        <h1 className="title">
+        <h1 data-testid="hero-title" className="title">
           {frontmatter.greetings}{" "}
           <span role="img" aria-label="emoji" style={{ fontSize: "inherit" }}>
             {frontmatter.emoji}
@@ -82,8 +118,8 @@ const Hero = ({ content, image }) => {
       <div className="hero-image">
         <Img
           className="me"
-          fluid={image.fluid}
           alt="A picture of me at the beach in São Jacinto, Portugal."
+          {...data.file.childImageSharp}
         />
       </div>
     </StyledSection>
