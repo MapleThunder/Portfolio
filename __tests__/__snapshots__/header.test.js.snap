@@ -99,6 +99,7 @@ exports[`Header renders correctly 1`] = `
             class="sc-bdfBwQ fmQqQM"
           >
             <svg
+              data-testid="theme-icon"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -118,6 +119,7 @@ exports[`Header renders correctly 1`] = `
             </svg>
             <input
               class="checkbox"
+              data-testid="theme-toggle-checkbox"
               id="toggle"
               type="checkbox"
             />

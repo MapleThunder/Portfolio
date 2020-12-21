@@ -52,10 +52,15 @@ const ThemeToggle = () => {
     <ThemeToggler>
       {({ theme, toggleTheme }) => (
         <Toggle>
-          {theme === "dark" ? <BsMoon className="yellow" /> : <BsSun />}
+          {theme === "dark" ? (
+            <BsMoon data-testid="theme-icon" className="yellow" />
+          ) : (
+            <BsSun data-testid="theme-icon" />
+          )}
           <input
             id="toggle"
             type="checkbox"
+            data-testid="theme-toggle-checkbox"
             className="checkbox"
             onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
             checked={theme === "dark"}
