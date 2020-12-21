@@ -1,15 +1,8 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import { StaticQuery } from "gatsby";
+import { render, cleanup } from "@testing-library/react";
 import { PureHero as Hero } from "../src/components/hero";
 
-// beforeEach(() => {
-//   StaticQuery.mockImplementationOnce(({ render }) =>
-//     render({
-
-//     })
-//   );
-// });
+beforeEach(cleanup); // clean the DOM !
 
 describe("Hero", () =>
   it("renders correctly", () => {
