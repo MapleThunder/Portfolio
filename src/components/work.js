@@ -11,7 +11,7 @@ const WorkSection = styled.section`
 
     .work-card {
       border-radius: var(--borderRadius);
-      /* background-color: var(--cardBg); */
+      background-color: var(--cardBg);
       box-shadow: var(--level-2);
       padding: 10px 15px;
       display: grid;
