@@ -1,12 +1,12 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
 import Burger from "../src/components/burger";
 
 describe("Burger", () => {
-  it("renders correctly", () => {
-    const tree = renderer
-      .create(<Burger open={false} setOpen={jest.fn()} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+  it("renders correctly, closed", () => {
+    const { asFragment } = render(<Burger open={false} setOpen={jest.fn()} />);
+    expect(
+      asFragment(<Burger open={false} setOpen={jest.fn()} />)
+    ).toMatchSnapshot();
   });
 });

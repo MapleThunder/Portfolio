@@ -1,10 +1,12 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { render, cleanup } from "@testing-library/react";
 import Header from "../src/components/header";
+
+afterEach(cleanup);
 
 describe("Header", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Header siteTitle="NB" />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<Header siteTitle="NB" />);
+    expect(asFragment(<Header siteTitle="NB" />)).toMatchSnapshot();
   });
 });

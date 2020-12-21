@@ -28,7 +28,10 @@ describe("Hero", () =>
         },
       },
     };
-    const { getByTestId } = render(<Hero node={node} image={image} />);
+    const { getByTestId, asFragment } = render(
+      <Hero node={node} image={image} />
+    );
 
     expect(getByTestId("hero-title")).toHaveTextContent("I'm Niko Bentley");
+    expect(asFragment(<Hero node={node} image={image} />)).toMatchSnapshot();
   }));
