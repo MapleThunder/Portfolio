@@ -18,5 +18,15 @@
     "period": "Jun '17 - Nov '20",
     "location": "Halifax, Canada",
     "specialization": "Drupal Development, PHP, JavaScript"
+  },
+  {
+    "icon_light": "../images/work/redspace-logo.png",
+    "icon_dark": "../images/work/redspace-logo.png",
+    "alt": "REDspace logo.",
+    "title": "REDspace",
+    "subtitle": "Software Developer",
+    "period": "Jan '21 - Present",
+    "location": "Halifax, Canada",
+    "specialization": "PHP, Drupal, JavaScript"
   }
 ]
