@@ -80,6 +80,9 @@ const Skills = () => {
     }
   `);
 
+  console.log(data.allSkillsJson.edges[0].node.alt)
+  console.log(typeof data.allSkillsJson.edges[0].node.alt)
+
   return (
     <SkillsWrapper id="skills" tabIndex="0">
       <h2>Skills</h2>
